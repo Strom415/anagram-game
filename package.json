@@ -1,0 +1,45 @@
+{
+  "name": "countdown",
+  "version": "2.0.0",
+  "description": "countdown webapp",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "heroku-postbuild": "webpack -p",
+    "dev": "webpack -d --watch",
+    "server": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Strom415/countdown.git"
+  },
+  "author": "Matt Strom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Strom415/countdown/issues"
+  },
+  "homepage": "https://github.com/Strom415/countdown#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "word-definition": "^2.1.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.3.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "nodemon": "^2.0.2",
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10"
+  }
+}
