@@ -3,7 +3,7 @@ const path = require('path');
 const wd = require('word-definition');
 const db = require('../db/index.js');
 const app = express();
-const port = process.env.PORT || 3087;
+const port = process.env.PORT || 3090;
 const dictionary = new db.Dictionary('./db/dictionary-max-9.txt');
 
 app.use(express.static(path.resolve(__dirname, '../public/dist')));
