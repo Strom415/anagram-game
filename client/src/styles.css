@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap');
 
 * {
   -webkit-box-sizing: border-box;
@@ -32,14 +34,34 @@ p {
   pointer-events: none;
 }
 
+#title {
+  position: absolute;
+  text-align: center;
+  font: 50px 'Amatic SC', cursive;
+  font-weight: 700;
+  color: #3e3e3e;
+  /* border: 1px solid #4a4a4a;; */
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 50px;
+  /* text-shadow: -1px 0 #3e3e3e, 0 1px #3e3e3e, 1px 0 #3e3e3e, 0 -1px #3e3e3e; */
+  /* text-shadow: 2px 2px; */
+  /* text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2); */
+}
+
 /* Navigation Bar */
 .navBarButton {
   background-color: #4a4a4a;
   border: 1px solid black;
   color:white;
-  font: 20px 'Russo One', sans-serif;
+  font: 28px 'Amatic SC', cursive;
+  font-weight: 700;
+  letter-spacing: 2px;
   height: 50px; width: 220px;
-  padding: 12px 0px;
+  padding: 6px 0px;
   position: absolute;
   text-align: center;
 }
@@ -253,7 +275,7 @@ p {
   border: 3px solid #3e3e3e;
   color: #3e3e3e;
   float:left;
-  font: 70px 'Roboto', sans-serif;
+  font: 70px 'Russo One', sans-serif;
   height: 97px; width: 97px;
   margin-right: 3px;
   padding-top: 5px;
@@ -335,7 +357,10 @@ button.lgButton {
   color: white;
   border: 1px solid black;
   border-radius: 6px 0px 0px 6px;
-  font: 18px 'Russo One', sans-serif;
+  font: 28px 'Amatic SC', cursive;
+  font-weight: 700;
+  letter-spacing: 2px;
+  height: 50px; width: 220px;
   height: 50px; width: 140px;
   margin-left: 340px;
   position: absolute;
@@ -501,6 +526,26 @@ button.lgButton {
   font-size: 20px;
   padding-top: 10px;
   text-align: center;
+  -webkit-animation-name: scoreSize;  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 3s;  /* Safari 4.0 - 8.0 */  
+  -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+  animation-name: scoreSize;
+  animation-duration: 1.5s;  
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes scoreSize {
+  0% {font-size: 50px; text-shadow: none;}
+  10% {font-size: 60px; color: #e67a82; text-shadow: none;}
+  70% {font-size: 60px; color: #e67a82; text-shadow: none;}
+  100% {font-size: 20px; color: #3e3e3e; }
+}
+
+@keyframes scoreSize {
+  0% {font-size: 0px; text-shadow: none;}
+  10% {font-size: 60px; color: #e67a82; text-shadow: none;}
+  70% {font-size: 60px; color: #e67a82; text-shadow: none;}
+  100% {font-size: 20px; color: #3e3e3e; }
 }
 
 /* Definition Bar */
@@ -532,7 +577,6 @@ button.lgButton {
 /* Containers */
 #bottomContainer {
   position: relative;
-  background-color: pink;
 }
 
 #entryContainer {
@@ -544,15 +588,56 @@ button.lgButton {
   position:relative;
   height: 110px;
   overflow: hidden;
+  margin-top: 190px;
 }
 
 #upperContainer {
   height: 167px;
-  margin-top: 150px;
+  padding-top: 150px;
 }
 
 #gameContainer {
   margin: auto;
   position: relative;
   width: 900px;
+}
+
+#shelf {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  left: 0;
+  right: 0;
+  top: 0px;
+  width: 350px;
+  height: 130px;
+  border-radius: 10px;
+  z-index: -1;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+}
+
+#shelf2 {
+  position: absolute;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  left: 0;
+  right: 0;
+  top: 100px;
+  width: 1000px;
+  height: 250px;
+  border-radius: 10px;
+  z-index: -2;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+}
+
+#signature {
+  font: 24px 'Amatic SC', cursive;
+  font-weight: 700;
+  color: #3e3e3e;
+  position: fixed;
+  bottom: 40px;
+  left: 60px;
 }

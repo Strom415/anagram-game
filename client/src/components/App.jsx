@@ -32,7 +32,7 @@ class App extends React.Component {
       showHighScores: false,
       showHowToPlay: false,
       showNameEntry: false,
-      timer: 60,
+      timer: 3,
       updateId: undefined,
       username: '',
     };
@@ -105,10 +105,8 @@ class App extends React.Component {
   handleStart = () => {
     if (this.state.round === 'pre') {
       const letters = this.generateLetters();
-      this.setState( { round: 'active' });
       this.cycleLetters(letters, 20);
       this.getAnagrams(letters);
-      this.focusInput();
     }
   }
 
@@ -165,6 +163,7 @@ class App extends React.Component {
       }, 20)
     } else {
       this.startTimer();
+      this.setState( { round: 'active' }, this.focusInput);
     }
   }
 
@@ -273,7 +272,8 @@ class App extends React.Component {
       }
     });
 
-    this.setState({ score }, this.isHighScore);
+    this.setState({ score });
+    // this.setState({ score }, this.isHighScore);
   }
 
   // LEADERBOARD
@@ -335,60 +335,66 @@ class App extends React.Component {
     const { addEntry, addLetter, updateDatabase, autofill, displayTab, handleAnagramClick, handleChange, handleUserNameChange, reset, handleStart, switchTab, toggleHighScores, toggleHowToPlay } = this;
     const { activeAnagram, activeTab, anagrams, dictionaryData, entries, entry, highscores, letters, showNameEntry, round, score, showHighScores, showHowToPlay, timer, username } = this.state;
     return (
-      <div id='gameContainer'>
-        <div id='upperContainer'>
-          <NavBar
-            reset={reset}
-            round={round}
-            toggleHighScores={toggleHighScores}
-            toggleHowToPlay={toggleHowToPlay}
-            handleStart={handleStart}
-            timer={timer} />
-          <GameBoard
-            letters={letters} />
-          <HowToPlay 
-            showHowToPlay={showHowToPlay}
-            toggleHowToPlay={toggleHowToPlay} />
-          <HighScores 
-            highscores={highscores}
-            showHighScores={showHighScores}
-            toggleHighScores={toggleHighScores}/>
-          <NameEntry
-            updateDatabase={updateDatabase}
-            showNameEntry={showNameEntry}
-            handleUserNameChange={handleUserNameChange}
-            username={username} />
-        </div>
-        <div id='middleContainer'>
-          {round === 'post' && 
-            <ScoreBar 
-              score={score} />}
-          {round === 'post' &&
-            <DefinitionBar
-              dictionaryData={dictionaryData} />}
-        </div>
-        <div id='bottomContainer'>
-          <div id='entryContainer'>
-            <EntryForm
-              addEntry={addEntry}
-              entry={entry}
-              handleChange={handleChange}
-              round={round} />
-            <EntryList
-              entries={entries} />
+      <div> 
+        <div id='signature'>A game by <a href="https://www.linkedin.com/in/matt-strom/" target="_blank">Matt Strom</a></div>
+        <div id='title'>Anagram Junkie</div>
+        <div id='shelf'></div>
+        <div id='shelf2'></div>
+        <div id='gameContainer'>
+          <div id='upperContainer'>
+            <NavBar
+              reset={reset}
+              round={round}
+              toggleHighScores={toggleHighScores}
+              toggleHowToPlay={toggleHowToPlay}
+              handleStart={handleStart}
+              timer={timer} />
+            <GameBoard
+              letters={letters} />
+            <HowToPlay 
+              showHowToPlay={showHowToPlay}
+              toggleHowToPlay={toggleHowToPlay} />
+            <HighScores 
+              highscores={highscores}
+              showHighScores={showHighScores}
+              toggleHighScores={toggleHighScores}/>
+            <NameEntry
+              updateDatabase={updateDatabase}
+              showNameEntry={showNameEntry}
+              handleUserNameChange={handleUserNameChange}
+              username={username} />
           </div>
-          {round === 'post' &&
-            <div id='anagramContainer' onKeyDown={switchTab} tabIndex='0'>
-              <AnagramNavBar
-                activeTab={activeTab}
-                anagrams={anagrams}
-                displayTab={displayTab} />
-              <AnagramBoard
-                activeAnagram={activeAnagram}
-                activeTab={activeTab}
-                anagrams={anagrams}
-                handleAnagramClick={handleAnagramClick} />
-            </div>}
+          <div id='middleContainer'>
+            {round === 'post' && 
+              <ScoreBar 
+                score={score} />}
+            {round === 'post' &&
+              <DefinitionBar
+                dictionaryData={dictionaryData} />}
+          </div>
+          <div id='bottomContainer'>
+            <div id='entryContainer'>
+              <EntryForm
+                addEntry={addEntry}
+                entry={entry}
+                handleChange={handleChange}
+                round={round} />
+              <EntryList
+                entries={entries} />
+            </div>
+            {round === 'post' &&
+              <div id='anagramContainer' onKeyDown={switchTab} tabIndex='0'>
+                <AnagramNavBar
+                  activeTab={activeTab}
+                  anagrams={anagrams}
+                  displayTab={displayTab} />
+                <AnagramBoard
+                  activeAnagram={activeAnagram}
+                  activeTab={activeTab}
+                  anagrams={anagrams}
+                  handleAnagramClick={handleAnagramClick} />
+              </div>}
+          </div>
         </div>
       </div>
     );
