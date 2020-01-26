@@ -20,12 +20,20 @@ button {
   outline: none;
 }
 
+h1 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 14px;
+}
+
 .noHover{
   pointer-events: none;
 }
 
 /* Navigation Bar */
-.navBar {
+.navBarButton {
   background-color: #4a4a4a;
   border: 1px solid black;
   color:white;
@@ -36,14 +44,208 @@ button {
   text-align: center;
 }
 
-#newGame {
+#howItWorks {
   position: absolute;
   border-radius: 6px;
 }
 
-#newGame:hover, #howToPlay:hover {
+#howItWorks:hover, #howToPlay:hover {
   color: #3e3e3e;
   background-color: white;
+}
+
+#highScores {
+  position: absolute;
+  border-radius: 6px;
+  margin-left: 680px;
+}
+
+#highScores:hover, #howToPlay:hover {
+  color: #3e3e3e;
+  background-color: white;
+}
+
+/* High Score Modal */
+.hideModal {
+  display: none;
+}
+
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(255, 255, 255); /* Fallback color */
+  background-color: rgba(255, 255, 255, 0.8); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+}
+
+.modalHighScores {
+  background-color: #282828;
+  border: solid 2px white;
+  color: white;
+  margin: 120px auto 0px;
+  padding: 20px;
+  border-radius: 6px;
+  height: 660px; width: 530px;
+}
+
+.modalHowToPlay {
+  background-color: #282828;
+  border: solid 2px white;
+  color: white;
+  margin: 120px auto 0px;
+  padding: 25px;
+  border-radius: 6px;
+  height: 660px; width: 400px;
+  text-align: center;
+}
+
+.rules {
+  width: 260px;
+  margin: auto;
+}
+
+.scoringTable {
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+#scoringHeader {
+  color: #e67a82;
+  padding-top: 40px;
+}
+
+.wordLengthHeader {
+  padding-right: 10px;
+  text-align: right;
+  width: 200px;
+}
+
+.scoreHeader {
+  padding-left: 10px;
+  text-align: left;
+  width: 200px;
+}
+
+.wordLengthCol {
+  text-align: right;
+  padding-right: 10px;
+  width: 200px;
+}
+
+.scoreCol {
+  text-align: left;
+  padding-left: 10px;
+  width: 200px;
+}
+
+.highScoreTableHeader {
+  font-size: 16px;
+}
+
+.highScoreRow {
+  padding-bottom: 20px;
+}
+
+.rankHeader {
+  width: 20px;
+}
+
+.nameHeader {
+  width: 200px;
+  text-align: left;
+}
+
+.scoreHeader {
+  width: 100px;
+}
+
+.longestWordHeader {
+  width: 300px;
+  text-align: right;
+}
+
+.rank {
+  width: 20px;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.name {
+  width: 200px;
+  font-size: 28px;
+}
+
+.score {
+  width: 100px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.longest {
+  width: 300px;
+  text-align: right;
+  font-size: 20px;
+}
+
+.row0 {
+  color: #e67a82;
+}
+
+.row1 {
+  color: #b57084;
+}
+
+.row2 {
+  color: #eeb39a;
+}
+
+/* Name Entry Modal */
+.modalNameEntry {
+  background-color: #282828;
+  border: solid 2px white;
+  color: white;
+  margin: 120px auto 0px;
+  padding: 25px;
+  border-radius: 6px;
+  height: 275px; width: 530px;
+  text-align: center;
+}
+
+#highScoreHeader {
+  font-size: 40px;
+}
+
+#nameInput {
+  background-color: #282828;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  font-family: 'Russo One', sans-serif;
+  font-size: 26px;
+  margin: 10px;
+  outline: none;
+  text-align: center;
+  width: 220px;
+}
+
+#highScoreButton {
+  font-family: 'Russo One', sans-serif;
+  height: 24px;
+  width: 30px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 0px;
 }
 
 /* Game Board */
@@ -129,19 +331,19 @@ button.lgButton {
 
 /* Timer */
 #start {
-  background-color: #3e3e3e;
+  background-color: #4a4a4a;
   color: white;
   border: 1px solid black;
   border-radius: 6px 0px 0px 6px;
   font: 18px 'Russo One', sans-serif;
-  height: 60px; width: 140px;
-  margin-left: 681px;
+  height: 50px; width: 140px;
+  margin-left: 340px;
   position: absolute;
   transition: .2;
 }
 
 #start:hover {
-  color: #3e3e3e;
+  color: #4a4a4a;
   background-color: white;
 }
 
@@ -151,17 +353,28 @@ button.lgButton {
   border-radius: 0px 6px 6px 0px;
   color: #3e3e3e;
   font: 30px 'Russo One', sans-serif;
-  height: 60px; width: 80px;
-  margin-left: 820px;
-  padding-top: 12px;
+  height: 50px; width: 80px;
+  margin-left: 480px;
+  padding-top: 8px;
   position: absolute;
 }
 
 #timerWrapper {
   position: absolute;
-  margin-top: 185px;
+  margin-top: 0px;
   text-align: center;
 }
+
+/* High Scores */
+/* #highScores {
+  background-color: #3e3e3e;
+  border-radius: 6px;
+  color: white;
+  height: 415px; width: 350px;
+  position: absolute;
+  margin-left: 925px;
+} */
+
 
 /* Entry Input */
 #addEntry {
@@ -281,6 +494,15 @@ button.lgButton {
   border-radius: 0px 8px 0px 0px;
 }
 
+/* Score Bar */
+.scoreBar {
+  color: #e67a82;
+  position: relative;
+  font-size: 20px;
+  padding-top: 10px;
+  text-align: center;
+}
+
 /* Definition Bar */
 #dictionaryData{
   font-family: 'Roboto Mono', monospace;
@@ -320,12 +542,12 @@ button.lgButton {
 
 #middleContainer {
   position:relative;
-  height: 80px;
+  height: 110px;
   overflow: hidden;
 }
 
 #upperContainer {
-  height: 245px;
+  height: 167px;
   margin-top: 150px;
 }
 

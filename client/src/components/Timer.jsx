@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Timer = ({ round, startTimer, timer }) => (
+const Timer = ({ round, handleStart, reset, timer }) => (
   <div id='timerWrapper'>
     <button 
-      className={round === 'pre' ? '' : 'noHover'}
+      className={round === 'active' ? 'noHover' : ''}
       id='start'
-      onClick={startTimer}>{round === 'pre' && `Start round`}
+      onClick={round === 'pre' && handleStart || reset}>{round === 'pre' && `Play` || round === 'post' && `New Game`}
     </button>
     <div id='timer'>{timer}</div>
   </div>

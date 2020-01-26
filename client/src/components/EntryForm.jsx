@@ -14,6 +14,7 @@ const EntryForm = ({ addEntry, entry, handleChange, round }) => (
       className={round === 'post' ? 'noHover' : ''}
       id='addEntry'
       onClick={addEntry}>
+      Add
     </button>
   </form>
 );
