@@ -13,7 +13,6 @@ import NameEntry from './NameEntry'
 import ScoreBar from './ScoreBar'
 import letterPools from '../letterPools.js';
 import mwkey from '../mwkey.js';
-import highscoresData from '../highScores.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +23,7 @@ class App extends React.Component {
       anagrams: {},
       dictionaryData: { definition: `Click on a word to see it's definition` },
       entry: '',
-      highscores: highscoresData,
+      highscores: [],
       entries: [],
       letters: [],
       longest: '',
