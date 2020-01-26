@@ -3,7 +3,9 @@ const client = new Client({
   user: "postgres",
   host: "localhost",
   port: 5432,
-  database: "anagrams"
+  database: "anagrams",
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
 });
 
 client.connect();
