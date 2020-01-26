@@ -32,7 +32,7 @@ class App extends React.Component {
       showHighScores: false,
       showHowToPlay: false,
       showNameEntry: false,
-      timer: 6,
+      timer: 60,
       updateId: undefined,
       username: '',
     };

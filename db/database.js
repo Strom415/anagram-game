@@ -24,10 +24,6 @@ const showTable = (sendData) => {
   });
 }
 
-const selectScores = () => {
-
-}
-
 const insertScore = (data, sendData) => {
   console.log('score inserted')
   client.query(`INSERT INTO highscores (name, score, longest, date) VALUES('${data.name}', ${data.score}, '${data.longest.word}', ${data.date})`, () => {
@@ -46,6 +42,5 @@ const updateScore = (data, sendData) => {
 }
 
 module.exports.showTable = showTable;
-module.exports.selectScores = selectScores;
 module.exports.insertScore = insertScore;
 module.exports.updateScore = updateScore;
