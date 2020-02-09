@@ -32,7 +32,7 @@ class App extends React.Component {
       showHighScores: false,
       showHowToPlay: false,
       showNameEntry: false,
-      timer: 3,
+      timer: 60,
       updateId: undefined,
       username: '',
     };
@@ -272,8 +272,8 @@ class App extends React.Component {
       }
     });
 
-    this.setState({ score });
-    // this.setState({ score }, this.isHighScore);
+    // this.setState({ score });
+    this.setState({ score }, this.isHighScore);
   }
 
   // LEADERBOARD
@@ -296,8 +296,6 @@ class App extends React.Component {
 
     if (highscores[0].id !== undefined)
       this.setState({ showNameEntry: true, updateId: highscores[0].id }, this.focusUsernameEntry);
-
-    console.log(highscores)
   }
 
   sortScores = (a, b) => {

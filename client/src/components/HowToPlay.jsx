@@ -25,7 +25,6 @@ const HowToPlay = ({ showHowToPlay, toggleHowToPlay }) => (
               </tr>
             ))
           }
-          
         </tbody>
       </table>
       <span id='word'>anagram</span>

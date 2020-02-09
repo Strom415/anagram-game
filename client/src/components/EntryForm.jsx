@@ -1,7 +1,7 @@
 import React from 'react';
 
 const EntryForm = ({ addEntry, entry, handleChange, round }) => (
-  <div>
+  <div className>
     {round !== 'pre' && <form id='entryForm'>
       <input
         autoComplete='off'
