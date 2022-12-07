@@ -21,8 +21,8 @@
   "homepage": "https://github.com/Strom415/countdown#readme",
   "dependencies": {
     "axios": "^0.19.0",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "pg": "^7.17.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
